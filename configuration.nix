@@ -7,6 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      # As I have symlinked my files for pushing to github, I now give the absolute path
+      # to this file.
+      #./hardware-configuration.nix
       /etc/nixos/hardware-configuration.nix
     ];
 
@@ -106,6 +109,7 @@
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   neovim
   git
+  kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
