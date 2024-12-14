@@ -14,6 +14,8 @@
 
       # Importing config from modules
       ./modules/development/cli.nix
+      ./modules/development/terminal.nix
+      ./modules/applications/browsers.nix
     ];
 
   # Bootloader.
@@ -105,14 +107,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  git
-  kitty
-  librewolf
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
