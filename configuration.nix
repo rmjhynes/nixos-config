@@ -111,6 +111,12 @@
   git
   kitty
   tmux
+  zsh
+  bat
+  fzf
+  htop
+  thefuck
+  neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
