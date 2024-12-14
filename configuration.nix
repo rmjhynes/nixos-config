@@ -15,6 +15,7 @@
       # Importing config from modules
       ./modules/development/cli.nix
       ./modules/development/terminal.nix
+      ./modules/development/languages.nix
       ./modules/applications/browsers.nix
     ];
 
