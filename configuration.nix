@@ -11,6 +11,9 @@
       # to this file.
       #./hardware-configuration.nix
       /etc/nixos/hardware-configuration.nix
+
+      # Importing config from modules
+      ./modules/development/cli.nix
     ];
 
   # Bootloader.
@@ -106,17 +109,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  neovim
   git
   kitty
-  tmux
-  zsh
-  bat
-  fzf
-  htop
-  thefuck
-  neofetch
   librewolf
   ];
 
