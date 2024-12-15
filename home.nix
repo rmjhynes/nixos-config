@@ -7,6 +7,7 @@
 
   programs.home-manager.enable = true;
 
+  home.file."test.txt".text = "test.txt";
 
   home.packages = with pkgs; [
    ripgrep
