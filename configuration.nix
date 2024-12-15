@@ -103,6 +103,16 @@
     ];
   };
 
+  users.users.bob = {
+    isNormalUser = true;
+    description = "Bob";
+    extraGroups = [ "networkmanager" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    #  thunderbird
+    ];
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 

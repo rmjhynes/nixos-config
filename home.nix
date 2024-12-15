@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dotfiles, ... }:
 
 {
   home.username = "rmjhynes";
@@ -7,7 +7,13 @@
 
   programs.home-manager.enable = true;
 
-  home.file."test.txt".text = "test.txt";
+  home.file."test.txt".text = "This is a test...";
+
+  home.file = {
+    ".aliases" = {
+      source = dotfiles + ".aliases";
+    };
+  };
 
   home.packages = with pkgs; [
    ripgrep
