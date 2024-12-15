@@ -6,18 +6,18 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      # As I have symlinked my files for pushing to github, I now give the absolute path
-      # to this file.
-      #./hardware-configuration.nix
-      /etc/nixos/hardware-configuration.nix
+    [ 
+      ./hardware-configuration.nix
 
-      # Importing config from modules
+      # Import config from modules
       ./modules/development/cli.nix
       ./modules/development/terminal.nix
       ./modules/development/languages.nix
       ./modules/applications/browsers.nix
     ];
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
