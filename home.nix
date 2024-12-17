@@ -23,6 +23,15 @@
 
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Ryan Hynes";
+    userEmail= "131348960+rmjhynes@users.noreply.github.com";
+    extraConfig = {
+      init.defaultbranch = "main";
+    };
+  };
+
   home.packages = with pkgs; [
    ripgrep
   ];
