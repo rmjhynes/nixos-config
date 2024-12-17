@@ -7,7 +7,7 @@
 
   programs.home-manager.enable = true;
 
-  # Importing dotfiles from dotfiles github repo.
+  # Importing dotfiles from my dotfiles github repo.
   home.file = {
 
     "/.config/nvim" = {
@@ -23,6 +23,8 @@
 
   };
 
+  # Installs git and writes the following config to
+  # .config/git/config
   programs.git = {
     enable = true;
     userName = "Ryan Hynes";
