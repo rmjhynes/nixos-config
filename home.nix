@@ -20,7 +20,7 @@
     ".aliases".source = dotfiles + "/.aliases";
     ".vimrc".source = dotfiles + "/.vimrc";
     ".tmux.conf".source = dotfiles + "/.tmux.conf";
-
+    ".config/kitty/kitty.conf".source = dotfiles + "/kitty.conf";
   };
 
   # Installs git and writes the following config to
