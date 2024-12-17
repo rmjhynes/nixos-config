@@ -11,7 +11,7 @@
 
   home.file = {
     ".aliases" = {
-      source = dotfiles + ".aliases";
+      source = dotfiles + "/.aliases";
     };
   };
 
