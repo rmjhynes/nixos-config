@@ -3,11 +3,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1734727978,
-        "narHash": "sha256-P/S+N7Kgag/0aM0+oi72jjrhFDY5i6LaRhEYvLEnTBQ=",
+        "lastModified": 1734773105,
+        "narHash": "sha256-zsBaI9f2QPCJ4Ylag0lCniJ+7xQVczQ09X0dXpRbeJ8=",
         "ref": "refs/heads/main",
-        "rev": "de7d2332f4eb080b3c01e47a3493d872bd72f726",
-        "revCount": 71,
+        "rev": "abb7b989ad0e034fd9a2aab2101012d57bede8c5",
+        "revCount": 72,
         "type": "git",
         "url": "https://github.com/rmjhynes/dotfiles.git"
       },

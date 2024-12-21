@@ -111,6 +111,10 @@
     shell = pkgs.zsh;
   };
 
+  system.activationScripts.script.text = ''
+    cp /home/rmjhynes/repos/nixos-config/modules/nixos.png /var/lib/AccountsService/icons/rmjhynes
+  '';
+
   users.users.bob = {
     isNormalUser = true;
     description = "Bob";
