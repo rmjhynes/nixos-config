@@ -22,7 +22,6 @@
     ".tmux.conf".source = dotfiles + "/.tmux.conf";
     ".config/kitty/kitty.conf".source = dotfiles + "/kitty.conf";
     "nixos_install.sh".source = dotfiles + "/scripts/nixos_install.sh";
-
   };
 
   # Installs git and writes the following config to
