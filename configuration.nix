@@ -111,6 +111,7 @@
     shell = pkgs.zsh;
   };
 
+  # Setting profile image for user
   system.activationScripts.script.text = ''
     cp /home/rmjhynes/repos/nixos-config/modules/nixos.png /var/lib/AccountsService/icons/rmjhynes
   '';
