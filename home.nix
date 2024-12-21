@@ -43,31 +43,8 @@
     };
   };
 
-  programs.zsh = {
-    # Use zsh as default shell
-    enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "powerlevel10k/powerlevel10k";
-      plugins = [
-        "git"
-	"zsh-autosuggestions"
-	"zsh-syntax-highlighting"
-      ];
-    };
-  };
-
   home.packages = with pkgs; [
    ripgrep
-   oh-my-zsh
-   zsh-powerlevel10k
-   zsh-autosuggestions
-   zsh-syntax-highlighting
-   dracula-icon-theme
-   dracula-theme
-   vimPlugins.dracula-vim
   ];
 }
 

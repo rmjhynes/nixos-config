@@ -108,6 +108,7 @@
       kdePackages.kate
     #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   users.users.bob = {
@@ -122,6 +123,9 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  programs.zsh.enable = true;
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

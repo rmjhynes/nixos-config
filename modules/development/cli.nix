@@ -6,7 +6,6 @@
     vim
     neovim
     tmux
-    zsh
     bat
     fzf
     htop
