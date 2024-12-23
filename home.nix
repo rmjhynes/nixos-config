@@ -42,6 +42,12 @@
     };
   };
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+    };
+  };
+
   home.packages = with pkgs; [
    ripgrep
   ];
