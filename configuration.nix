@@ -24,7 +24,6 @@
     grub = {
       enable = true;
       efiSupport = true;
-
       device = "/dev/nme0n1";
       configurationLimit = 5;
     };
