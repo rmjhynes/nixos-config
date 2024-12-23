@@ -19,11 +19,20 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  # Limit the number of generations (system versions) to keep to 5.
-  boot.loader.systemd-boot.configurationLimit = 5;
+  # Using GRUB bootloader over system-d as it looks nicer
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+
+      device = "/dev/nme0n1";
+      configurationLimit = 5;
+    };
+    # This was from the default config
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
