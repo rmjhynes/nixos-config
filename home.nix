@@ -24,6 +24,8 @@
     "nixos_install.sh".source = dotfiles + "/scripts/nixos_install.sh";
   };
 
+
+
   # Installs git and writes the following config to
   # .config/git/config
   programs.git = {
@@ -45,6 +47,68 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      "$mod" = "ALT";
+
+      monitor = [
+        ",preferred,auto,auto"
+      ];
+
+      general = {
+        gaps_in = 5;
+	gaps_out = 20;
+	border_size = 2;
+	layout = "dwindle";
+       };
+
+       input = {
+         follow_mouse = 1;
+	 sensitivity = 0;
+       };
+
+       dwindle = {
+         pseudotile = true;
+	 preserve_split = true;
+       };
+      
+      decoration  = {
+        rounding = 10;
+  
+        # Change transparency of focused and unfocused windows
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+  
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          #color = rgba(1a1a1aee);
+        };
+  
+        # https://wiki.hyprland.org/Configuring/Variables/#blur
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+  
+          vibrancy = 0.1696;
+        };
+      };
+      bind = [
+        "$mod, RETURN, exec, kitty"
+	"$mod, C, killactive"
+	"$mod, M, exit"
+	"$mod, E, exec, $fileManager"
+	"$mod, V, togglefloating"
+	"$mod, R, exec, $menu"
+	"$mod, P, pseudo" # dwindle
+	"$mod, J, togglesplit" # dwindle
+
+	# Move focus with mainMod + arrow keys
+	"$mod, left, movefocus, l"
+	"$mod, right, movefocus, r"
+	"$mod, up, movefocus, u"
+	"$mod, down, movefocus, d"
+      ];
     };
   };
 
