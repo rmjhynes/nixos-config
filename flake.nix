@@ -11,9 +11,12 @@
       url = "git+https://github.com/rmjhynes/dotfiles.git";
       flake = false;
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, dotfiles, ... }:
+  outputs = { self, nixpkgs, home-manager, dotfiles, ghostty, ... }:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -22,12 +25,18 @@
     lib = nixpkgs.lib;
     specialArgs = {
       inherit dotfiles;
+      inherit ghostty;
     };
   in {
     nixosConfigurations = {
       rmjhynes = lib.nixosSystem {
         inherit system;
 	modules = [
+	  {
+	    environment.systemPackages = [
+	      ghostty.packages.aarch64-linux.default
+	    ];
+	  }
 	  ./configuration.nix
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
