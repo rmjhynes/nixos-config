@@ -14,6 +14,7 @@
       ./modules/development/terminal.nix
       ./modules/development/languages.nix
       ./modules/applications/browsers.nix
+      ./modules/hyprland/hyprland.nix
     ];
 
   # Enable flakes
@@ -141,7 +142,6 @@
   programs.firefox.enable = true;
 
   programs.zsh.enable = true;
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

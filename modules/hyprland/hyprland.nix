@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kitty
-    foot
+    wofi
+    rofi-wayland
+    waybar
   ];
 }
