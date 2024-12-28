@@ -47,11 +47,13 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+
     settings = {
       "$mod" = "ALT";
+      "exec-once" = "waybar";
 
       monitor = [
-        ",preferred,auto,auto"
+        "virtual-1,preferred,auto,0.5"
       ];
 
       general = {
@@ -95,12 +97,13 @@
         };
       };
       bind = [
-        "$mod, RETURN, exec, kitty"
+        "$mod, RETURN, exec, foot"
 	"$mod, C, killactive"
 	"$mod, M, exit"
 	"$mod, E, exec, $fileManager"
 	"$mod, V, togglefloating"
-	"$mod, R, exec, $menu"
+	#"$mod, W, exec, wofi --show drun"
+	"$mod, S, exec, rofi -show drun"
 	"$mod, P, pseudo" # dwindle
 	"$mod, J, togglesplit" # dwindle
 
