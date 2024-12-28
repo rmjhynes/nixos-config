@@ -23,6 +23,14 @@
     ".config/kitty/kitty.conf".source = dotfiles + "/kitty.conf";
     ".config/ghostty/config".source = dotfiles + "/ghostty.conf";
     "nixos_install.sh".source = dotfiles + "/scripts/nixos_install.sh";
+
+    # Set wallpaper with hyprpaper
+    ".config/hypr/hyprpaper.conf" = {
+      text = ''
+        preload = /home/rmjhynes/repos/nixos-config/modules/nix-wallpaper.png
+        wallpaper = , /home/rmjhynes/repos/nixos-config/modules/nix-wallpaper.png
+      '';
+    };
   };
 
 
@@ -50,7 +58,12 @@
 
     settings = {
       "$mod" = "ALT";
-      "exec-once" = "waybar";
+
+      # Commands to run on startup
+      exec-once = [
+        "waybar"
+	"hyprpaper"
+      ];
 
       monitor = [
         "virtual-1,preferred,auto,0.5"

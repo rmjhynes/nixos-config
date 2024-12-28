@@ -5,5 +5,6 @@
     wofi
     rofi-wayland
     waybar
+    hyprpaper
   ];
 }
