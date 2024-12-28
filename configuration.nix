@@ -125,7 +125,7 @@
 
   # Setting profile image for user
   system.activationScripts.script.text = ''
-    cp /home/rmjhynes/repos/nixos-config/modules/nixos.png /var/lib/AccountsService/icons/rmjhynes
+    cp /home/rmjhynes/repos/nixos-config/modules/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
   '';
 
   users.users.bob = {
