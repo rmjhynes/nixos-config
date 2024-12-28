@@ -34,7 +34,6 @@
   };
 
 
-
   # Installs git and writes the following config to
   # .config/git/config
   programs.git = {
