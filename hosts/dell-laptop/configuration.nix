@@ -24,13 +24,8 @@
   boot.loader = {
     grub = {
       enable = true;
-      efiSupport = true;
-      device = "/dev/nme0n1";
+      device = "/dev/sda";
       configurationLimit = 5;
-    };
-    # This was from the default config
-    efi = {
-      canTouchEfiVariables = true;
     };
   };
 
