@@ -51,6 +51,28 @@
 	  }
 	];
       };
+      # Config for ancient Dell laptop
+      dell-laptop = lib.nixosSystem {
+        inherit system;
+	modules = [
+	  {
+	    environment.systemPackages = [
+	      ghostty.packages.aarch64-linux.default
+	    ];
+	  }
+	  ./hosts/dell-laptop/configuration.nix
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.extraSpecialArgs = {
+	      inherit dotfiles;
+	    };
+	    home-manager.users.rmjhynes = {
+	      imports = [ ./users/rmjhynes/rmjhynes.nix ];
+	    };
+	  }
+	];
+      };
       bob = lib.nixosSystem {
         inherit system;
 	modules = [
