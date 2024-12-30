@@ -132,8 +132,6 @@
     description = "Ryan Hynes";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -148,8 +146,6 @@
     description = "Bob";
     extraGroups = [ "networkmanager" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
     ];
   };
 
