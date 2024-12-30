@@ -10,11 +10,11 @@
       ./hardware-configuration.nix
 
       # Import config from modules
-      ./modules/development/cli.nix
-      ./modules/development/terminal.nix
-      ./modules/development/languages.nix
-      ./modules/applications/browsers.nix
-      ./modules/hyprland/hyprland.nix
+      ../../modules/development/cli.nix
+      ../../modules/development/terminal.nix
+      ../../modules/development/languages.nix
+      ../../modules/applications/browsers.nix
+      ../../modules/hyprland/hyprland.nix
     ];
 
   # Enable flakes
