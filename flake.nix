@@ -57,9 +57,10 @@
 	modules = [
 	  {
 	    environment.systemPackages = [
-	      ghostty.packages.aarch64-linux.default
+	      ghostty.packages.x86_64-linux.default
 	    ];
 	  }
+
 	  ./hosts/dell-laptop/configuration.nix
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
