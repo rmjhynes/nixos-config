@@ -29,7 +29,8 @@
     };
   in {
     nixosConfigurations = {
-      rmjhynes = lib.nixosSystem {
+      # Config for Nix on a VM
+      vm = lib.nixosSystem {
         inherit system;
 	modules = [
 	  {
@@ -37,7 +38,7 @@
 	      ghostty.packages.aarch64-linux.default
 	    ];
 	  }
-	  ./configuration.nix
+	  ./hosts/vm/configuration.nix
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
@@ -45,7 +46,7 @@
 	      inherit dotfiles;
 	    };
 	    home-manager.users.rmjhynes = {
-	      imports = [ ./home.nix ];
+	      imports = [ ./users/rmjhynes/rmjhynes.nix ];
 	    };
 	  }
 	];
@@ -53,12 +54,12 @@
       bob = lib.nixosSystem {
         inherit system;
 	modules = [
-	  ./configuration.nix
+	  ./hosts/vm/configuration.nix
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.bob = {
-	      imports = [ ./bob.nix ];
+	      imports = [ ./users/bob/bob.nix ];
 	    };
 	  }
 	];

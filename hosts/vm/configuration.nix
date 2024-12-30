@@ -10,11 +10,11 @@
       ./hardware-configuration.nix
 
       # Import config from modules
-      ./modules/development/cli.nix
-      ./modules/development/terminal.nix
-      ./modules/development/languages.nix
-      ./modules/applications/browsers.nix
-      ./modules/hyprland/hyprland.nix
+      ../../modules/development/cli.nix
+      ../../modules/development/terminal.nix
+      ../../modules/development/languages.nix
+      ../../modules/applications/browsers.nix
+      ../../modules/hyprland/hyprland.nix
     ];
 
   # Enable flakes
@@ -78,7 +78,22 @@
   };
 
   # Enable Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    config.common.default = "*";
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    KITTY_ENABLE_WAYLAND = "1";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -142,7 +157,7 @@
   programs.firefox.enable = true;
 
   programs.zsh.enable = true;
-
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
