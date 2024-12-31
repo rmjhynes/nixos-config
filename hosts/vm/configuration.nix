@@ -141,14 +141,6 @@
     cp /home/rmjhynes/repos/nixos-config/modules/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
   '';
 
-  users.users.bob = {
-    isNormalUser = true;
-    description = "Bob";
-    extraGroups = [ "networkmanager" ];
-    packages = with pkgs; [
-    ];
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
