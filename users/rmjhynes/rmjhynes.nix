@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../hosts/hyprland.nix
+    ./config/hyprland.nix
     ./config/packages.nix
   ];
 
