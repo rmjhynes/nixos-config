@@ -28,6 +28,8 @@
       inherit ghostty;
     };
 
+    # Reusable home-manager configuration function meaning I don't
+    # have to configure this for every nixos host config
     mkHomeConfiguration = { dotfiles }: {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
@@ -58,6 +60,7 @@
 	  })
 	];
       };
+
       # Config for ancient Dell laptop
       dell-laptop = lib.nixosSystem {
         inherit system;
@@ -67,8 +70,6 @@
 	      ghostty.packages.x86_64-linux.default
 	    ];
 	  }
-
-	  ./hosts/dell-laptop/configuration.nix
           # Laptop sepcific config
 	  ./hosts/vm/configuration.nix
 	  home-manager.nixosModules.home-manager
