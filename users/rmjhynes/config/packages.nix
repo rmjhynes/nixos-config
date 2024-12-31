@@ -25,6 +25,7 @@
     terraform
 
     # Applications
+    firefox
     librewolf
 
     # Hyprland

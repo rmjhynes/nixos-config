@@ -11,6 +11,9 @@
       ./packages.nix
     ];
 
+  # Enable zsh so it can be set as default for users
+  programs.zsh.enable = true;
+
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
@@ -121,10 +124,6 @@
     cp /home/rmjhynes/repos/nixos-config/hosts/common/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
   '';
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  programs.zsh.enable = true;
   
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
