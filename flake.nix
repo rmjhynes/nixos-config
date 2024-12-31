@@ -72,7 +72,7 @@
 	    ];
 	  }
           # Laptop sepcific config
-	  ./hosts/vm/configuration.nix
+	  ./hosts/dell-laptop/configuration.nix
 	  home-manager.nixosModules.home-manager
 	  (mkHomeConfiguration {
 	    dotfiles = dotfiles;
