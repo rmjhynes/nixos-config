@@ -7,10 +7,15 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Import my dotfiles from github
     dotfiles = {
       url = "git+https://github.com/rmjhynes/dotfiles.git";
       flake = false;
     };
+
+    # Import Ghostty flake from their repo until it is ready
+    # as a Nix package
     ghostty = {
       url = "github:ghostty-org/ghostty";
       flake = true;
@@ -30,7 +35,7 @@
     };
 
     # Reusable home-manager configuration function meaning I don't
-    # have to configure this for every nixos host config
+    # have to write this for every nixos host below
     mkHomeConfiguration = { dotfiles }: {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
@@ -43,8 +48,10 @@
     };
 
   in {
+    # Host machine configurations
     nixosConfigurations = {
-      # Config for Nix on a VM
+
+      # Config for NixOS on a VM on M3 macbook pro
       vm = lib.nixosSystem {
         inherit system;
 	modules = [
@@ -62,7 +69,7 @@
 	];
       };
 
-      # Config for ancient Dell laptop
+      # Config for NixOS on ancient Dell laptop
       dell-laptop = lib.nixosSystem {
         inherit system;
 	modules = [
@@ -79,6 +86,7 @@
 	  })
 	];
       };
+
     };
   };
 }
