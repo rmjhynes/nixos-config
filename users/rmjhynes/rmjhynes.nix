@@ -3,6 +3,7 @@
 {
   imports = [
     ../../hosts/hyprland.nix
+    ./config/packages.nix
   ];
 
   home.username = "rmjhynes";
@@ -85,8 +86,5 @@
     };
   };
 
-  home.packages = with pkgs; [
-   ripgrep
-  ];
 }
 
