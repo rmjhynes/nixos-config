@@ -32,8 +32,8 @@
     # Set wallpaper with hyprpaper
     ".config/hypr/hyprpaper.conf" = {
       text = ''
-        preload = /home/rmjhynes/repos/nixos-config/modules/nix-wallpaper.png
-        wallpaper = , /home/rmjhynes/repos/nixos-config/modules/nix-wallpaper.png
+        preload = /home/rmjhynes/repos/nixos-config/hosts/common/nix-wallpaper.png
+        wallpaper = , /home/rmjhynes/repos/nixos-config/hosts/common/nix-wallpaper.png
       '';
     };
 

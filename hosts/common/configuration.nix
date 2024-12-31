@@ -118,7 +118,7 @@
 
   # Setting profile image for user
   system.activationScripts.script.text = ''
-    cp /home/rmjhynes/repos/nixos-config/modules/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
+    cp /home/rmjhynes/repos/nixos-config/hosts/common/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
   '';
 
   # Install firefox.
