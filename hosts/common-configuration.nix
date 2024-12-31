@@ -7,12 +7,8 @@
 {
   imports =
     [ 
-      # Import config from modules
-      ../modules/development/cli.nix
-      ../modules/development/terminal.nix
-      ../modules/development/languages.nix
-      ../modules/applications/browsers.nix
-      ../modules/hyprland/hyprland.nix
+      # Import packages from packages file
+      ./packages.nix
     ];
 
   # Enable flakes
