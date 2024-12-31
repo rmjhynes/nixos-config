@@ -27,6 +27,18 @@
       inherit dotfiles;
       inherit ghostty;
     };
+
+    mkHomeConfiguration = { dotfiles }: {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = {
+        inherit dotfiles;
+      };
+      home-manager.users.rmjhynes = {
+        imports = [ ./users/rmjhynes/rmjhynes.nix ];
+      };
+    };
+
   in {
     nixosConfigurations = {
       # Config for Nix on a VM
@@ -38,17 +50,12 @@
 	      ghostty.packages.aarch64-linux.default
 	    ];
 	  }
+	  # VM sepcific config
 	  ./hosts/vm/configuration.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.extraSpecialArgs = {
-	      inherit dotfiles;
-	    };
-	    home-manager.users.rmjhynes = {
-	      imports = [ ./users/rmjhynes/rmjhynes.nix ];
-	    };
-	  }
+	  home-manager.nixosModules.home-manager
+	  (mkHomeConfiguration {
+	    dotfiles = dotfiles;
+	  })
 	];
       };
       # Config for ancient Dell laptop
@@ -62,29 +69,12 @@
 	  }
 
 	  ./hosts/dell-laptop/configuration.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.extraSpecialArgs = {
-	      inherit dotfiles;
-	    };
-	    home-manager.users.rmjhynes = {
-	      imports = [ ./users/rmjhynes/rmjhynes.nix ];
-	    };
-	  }
-	];
-      };
-      bob = lib.nixosSystem {
-        inherit system;
-	modules = [
+          # Laptop sepcific config
 	  ./hosts/vm/configuration.nix
-	  home-manager.nixosModules.home-manager {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.bob = {
-	      imports = [ ./users/bob/bob.nix ];
-	    };
-	  }
+	  home-manager.nixosModules.home-manager
+	  (mkHomeConfiguration {
+	    dotfiles = dotfiles;
+	  })
 	];
       };
     };
