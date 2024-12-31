@@ -13,6 +13,7 @@
     };
     ghostty = {
       url = "github:ghostty-org/ghostty";
+      flake = true;
     };
   };
 
