@@ -11,9 +11,6 @@
       ./packages.nix
     ];
 
-  # Enable zsh so it can be set as default for users
-  programs.zsh.enable = true;
-
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
@@ -45,20 +42,18 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  #services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-
-  # Enable GNOME Desktop Environment
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # Configure keymap in X11
+    xkb = {
+      layout = "gb";
+      variant = "";
+    };
   };
+
+  # Enable the KDE Plasma Desktop Environment
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable Hyprland
   programs.hyprland = {
@@ -78,11 +73,6 @@
     KITTY_ENABLE_WAYLAND = "1";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -109,6 +99,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+
+  # Enable zsh so it can be set as default for users
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rmjhynes = {
     isNormalUser = true;
@@ -124,7 +118,6 @@
     cp /home/rmjhynes/repos/nixos-config/hosts/common/nix-profile-icon.png /var/lib/AccountsService/icons/rmjhynes
   '';
 
-  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
