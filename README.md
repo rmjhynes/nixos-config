@@ -1,5 +1,5 @@
 # NixOS Configurations
-After researching different Linux distributions and trying out Arch as my first, I came across NixOS. NixOS allows me to declaratively *(like Terraform)* configure my different Linux hosts and pin dependency versions using a Flake. This means I can give my config to anyone and they would be able to reproduce the exact same system. This repo is definitely not the 'perfect' way to organise and configure everything but has been a great learning experience and I will continue to update and improve as I go.
+After researching different Linux distributions and trying out Arch as my first, I came across NixOS. NixOS allows me to declaratively *(like Terraform)* configure my different Linux hosts and pin dependency versions using a Flake. This means I can give my config to anyone and they would be able to reproduce the exact same system. This repo is definitely not the *perfect* way to organise and configure everything but has been a great learning experience and I will continue to update and improve as I go.
 
 ## Installation
 1) Firstly, you need to install NixOS on your machine. The ISOs can be found on the [official NixOS download page](https://nixos.org/download/).
