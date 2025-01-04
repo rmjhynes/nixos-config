@@ -73,11 +73,6 @@
       dell-laptop = lib.nixosSystem {
         inherit system;
 	modules = [
-	  {
-	    environment.systemPackages = [
-	      ghostty.packages.x86_64-linux.default
-	    ];
-	  }
           # Laptop sepcific config
 	  ./hosts/dell-laptop/configuration.nix
 	  home-manager.nixosModules.home-manager
@@ -91,11 +86,6 @@
       ec2 = lib.nixosSystem {
         inherit system;
 				modules = [
-	        {
-	          environment.systemPackages = [
-	            ghostty.packages.x86_64-linux.default
-	          ];
-	        }
           # EC2 sepcific config
 	        ./hosts/ec2/configuration.nix
 	        home-manager.nixosModules.home-manager
