@@ -87,6 +87,23 @@
 	];
       };
 
+			# Config for NixOS on EC2
+      ec2 = lib.nixosSystem {
+        inherit system;
+				modules = [
+	        {
+	          environment.systemPackages = [
+	            ghostty.packages.x86_64-linux.default
+	          ];
+	        }
+          # EC2 sepcific config
+	        ./hosts/ec2/configuration.nix
+	        home-manager.nixosModules.home-manager
+	        (mkHomeConfiguration {
+	          dotfiles = dotfiles;
+	        })
+	      ];
+      };
     };
   };
 }
