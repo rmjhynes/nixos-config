@@ -12,3 +12,6 @@ This repo contains the following hosts:
 - vm: A virtual machine running on my M3 Macbook Pro.
 - dell-laptop: A really old laptop that I first tried NixOS on.
 - ec2: (WIP) An ec2 instance where I deploy my NixOS config via a pipeline *(cos why not?)*.
+
+## Nix Home Manager
+Home Manager is a system for managing a user environment using the Nix package manager. Software packages and modules installed by NixOS are global to the entire system. Packages and modules installed via Home Manager will be linked to the respective user's home directory, therefore allowing you to manage each individual user's environment on the host machine. Since realistically I am the only person who is ever going to touch these Nix configs, I only have one user and use Home Manager to install my dotfiles in my own user directory. This means I don't have to manually clone my dotfiles repo and set everything up.
