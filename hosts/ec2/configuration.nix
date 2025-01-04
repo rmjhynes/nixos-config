@@ -7,6 +7,7 @@
 {
   imports =
     [ 
+      ./hardware-configuration.nix
       # Import the configuration shared between all hosts
       ../common/configuration.nix
     ];
