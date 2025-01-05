@@ -3,9 +3,9 @@ After researching different Linux distributions and trying out Arch as my first,
 
 ## Installation
 1) Firstly, you need to install NixOS on your machine. The ISOs can be found on the [official NixOS download page](https://nixos.org/download/).
-2) Clone this repository and add new configurations under `hosts/<machine-name>`.
+2) Clone this repository and add configurations for each new host machine under `hosts/<machine-name>`.
 3) Add a new host machine configuration in `flake.nix` and reference the configuration to use.
-4) Run `sudo nixos-rebuild switch --flake <path/to/flake.nix>#<host-name-in-flake.nix>` to rebuild the machine as per the config.
+4) Run `sudo nixos-rebuild switch --flake <path/to/flake/directory>#<host-name>` to rebuild the machine as per its config.
 
 ## Hosts
 This repo contains the following hosts:
