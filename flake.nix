@@ -94,6 +94,25 @@
 	        })
 	      ];
       };
+
+      # Config for NixOS on Beelink for Homelab
+      beelink-s12 = lib.nixosSystem {
+        inherit system;
+	modules = [
+	  {
+	    environment.systemPackages = [
+	      ghostty.packages.x86_64-linux.default
+	    ];
+	  }
+          # Homelab sepcific config
+	  ./hosts/beelink-s12/configuration.nix
+	  home-manager.nixosModules.home-manager
+	  (mkHomeConfiguration {
+	    dotfiles = dotfiles;
+	  })
+	];
+      };
+
     };
   };
 }
