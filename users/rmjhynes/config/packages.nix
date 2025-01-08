@@ -24,6 +24,9 @@
     go
     terraform
 
+    # Infra
+		k3s
+
     # Applications
     firefox
     librewolf
