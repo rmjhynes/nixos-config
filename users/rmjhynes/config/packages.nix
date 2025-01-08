@@ -25,7 +25,7 @@
     terraform
 
     # Infra
-		k3s
+    k3s
 
     # Applications
     firefox
