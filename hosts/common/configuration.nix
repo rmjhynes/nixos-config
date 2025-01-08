@@ -103,11 +103,14 @@
   # Enable zsh so it can be set as default for users
   programs.zsh.enable = true;
 
+  # Enable Docker daemon
+  virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rmjhynes = {
     isNormalUser = true;
     description = "Ryan Hynes";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;

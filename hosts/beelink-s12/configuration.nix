@@ -40,6 +40,6 @@
   # networking.firewall.enable = false;
 
   # Enable Docker daemon
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
 
 }
