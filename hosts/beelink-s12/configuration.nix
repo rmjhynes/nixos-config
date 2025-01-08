@@ -31,7 +31,10 @@
   }; 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    22 # ssh
+    6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
