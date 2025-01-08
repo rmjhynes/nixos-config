@@ -110,9 +110,15 @@
   users.users.rmjhynes = {
     isNormalUser = true;
     description = "Ryan Hynes";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker" # Add user to Docker group otherwise you get permission denied error when connecting to Docker daemon
+    ];
+
     packages = with pkgs; [
     ];
+
     shell = pkgs.zsh;
   };
 
