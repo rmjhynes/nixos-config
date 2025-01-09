@@ -17,7 +17,7 @@
     thefuck
     tlrc
     neofetch
-    tree
+    k9s
 
     # Languages
     python314
