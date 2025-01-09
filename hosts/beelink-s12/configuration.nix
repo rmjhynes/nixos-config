@@ -30,6 +30,14 @@
     };
   }; 
 
+  services.k3s = {
+    enable = true;
+    role = "server";
+    extraFlags = [
+      "--docker" # Use cri-dockerd instead of containerd
+    ];
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     22 # ssh
