@@ -35,7 +35,7 @@
     role = "server";
     extraFlags = [
       "--docker" # Use cri-dockerd instead of containerd
-      "--write-kubeconfig-mode 644"  # Makes it readable by all users (sudo not necessary to run k3s commands)
+      "--write-kubeconfig-mode 644"  # Makes kubeconfig file readable by all users (sudo not necessary to run k3s commands)
     ];
   };
 
