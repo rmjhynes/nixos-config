@@ -16,6 +16,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.variables = {
+    KUBECONFIG = "/etc/rancher/k3s/k3s.yaml"; # Tells k8s tools which config file to use when interacting with the cluster
+  };
+
   #networking.hostName = "homelab"; # Define your hostname.
 
   # List services that you want to enable:
