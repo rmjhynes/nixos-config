@@ -26,6 +26,8 @@
 
     # Infra
     k3s
+    argocd
+    kubernetes-helm
 
     # Applications
     firefox
