@@ -18,6 +18,7 @@
     tlrc
     neofetch
     k9s
+    jq
 
     # Languages
     python314
