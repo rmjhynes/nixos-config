@@ -19,6 +19,7 @@
     neofetch
     k9s
     jq
+    yq-go
 
     # Languages
     python314
