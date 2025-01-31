@@ -71,7 +71,7 @@
 
       # Config for NixOS on ancient Dell laptop
       dell-laptop = lib.nixosSystem {
-        inherit system;
+	inherit system;
 	modules = [
           # Laptop sepcific config
 	  ./hosts/dell-laptop/configuration.nix
@@ -82,17 +82,17 @@
 	];
       };
 
-			# Config for NixOS on EC2
+      # Config for NixOS on EC2
       ec2 = lib.nixosSystem {
-        inherit system;
-				modules = [
+	inherit system;
+	modules = [
           # EC2 sepcific config
-	        ./hosts/ec2/configuration.nix
-	        home-manager.nixosModules.home-manager
-	        (mkHomeConfiguration {
-	          dotfiles = dotfiles;
-	        })
-	      ];
+	  ./hosts/ec2/configuration.nix
+	  home-manager.nixosModules.home-manager
+	  (mkHomeConfiguration {
+	    dotfiles = dotfiles;
+	  })
+	];
       };
 
       # Config for NixOS on Beelink for Homelab
