@@ -27,6 +27,7 @@
     ".tmux.conf".source = dotfiles + "/.tmux.conf";
     ".config/kitty/kitty.conf".source = dotfiles + "/kitty.conf";
     ".config/ghostty/config".source = dotfiles + "/ghostty.conf";
+    ".config/htop/htoprc".source = dotfiles + "/htoprc";
     "nixos_install.sh".source = dotfiles + "/scripts/nixos_install.sh";
 
     # Set wallpaper with hyprpaper
