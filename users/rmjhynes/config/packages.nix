@@ -30,6 +30,7 @@
     k3s
     argocd
     kubernetes-helm
+    rclone
 
     # Applications
     firefox
