@@ -31,6 +31,7 @@
     argocd
     kubernetes-helm
     rclone
+    kubeseal
 
     # Applications
     firefox
