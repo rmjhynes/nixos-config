@@ -11,6 +11,7 @@ After researching different Linux distributions and trying out Arch as my first,
 This repo contains the following hosts:
 - vm: A virtual machine running on my M3 Macbook Pro.
 - dell-laptop: A really old laptop that I first tried NixOS on.
+- beelink-s12: A mini pc that runs my homelab.
 - ec2: (WIP) An ec2 instance where I deploy my NixOS config via a pipeline *(cos why not?)*.
 
 ## Nix Home Manager
