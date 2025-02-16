@@ -20,6 +20,7 @@
     k9s
     jq
     yq-go
+    lazygit
 
     # Languages
     python314
