@@ -20,6 +20,11 @@
     KUBECONFIG = "/etc/rancher/k3s/k3s.yaml"; # Tells k8s tools which config file to use when interacting with the cluster
   };
 
+  # Enables support for bluetooth
+  hardware.bluetooth.enable = true;
+  # Powers up the default bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = true;
+
   #networking.hostName = "homelab"; # Define your hostname.
 
   # List services that you want to enable:
