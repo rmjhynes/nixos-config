@@ -34,6 +34,9 @@
     rclone
     kubeseal
 
+    # Networking
+    dig
+
     # Applications
     firefox
     librewolf
