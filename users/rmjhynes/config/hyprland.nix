@@ -6,6 +6,7 @@
 
     settings = {
       "$mod" = "ALT";
+      "$fileManager" = "dolphin";
 
       # Commands to run on startup
       exec-once = [
@@ -61,9 +62,10 @@
       # Keybinds
       bind = [
         "$mod, RETURN, exec, ghostty"
-	"$mod, C, killactive"
+	"$mod, Q, killactive"
 	"$mod, M, exit"
-	"$mod, E, exec, $fileManager"
+	"$mod, F, exec, $fileManager"
+	"$mod, B, exec, firefox"
 	"$mod, V, togglefloating"
 	#"$mod, W, exec, wofi --show drun"
 	"$mod, S, exec, rofi -show drun"
