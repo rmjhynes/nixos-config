@@ -100,6 +100,171 @@
       display-drun = "Search";
     };
 
+    theme = let
+      inherit (config.lib.formats.rasi) mkLiteral;
+      /* Dracula theme colour palette */
+      drac-bgd = mkLiteral "#282a36";
+      drac-cur = mkLiteral "#44475a";
+      drac-fgd = mkLiteral "#f8f8f2";
+      drac-cmt = mkLiteral "#6272a4";
+      drac-cya = mkLiteral "#8be9fd";
+      drac-grn = mkLiteral "#50fa7b";
+      drac-ora = mkLiteral "#ffb86c";
+      drac-pnk = mkLiteral "#ff79c6";
+      drac-pur = mkLiteral "#bd93f9";
+      drac-red = mkLiteral "#ff5555";
+      drac-yel = mkLiteral "#f1fa8c";
+    in {
+
+      "*" = {
+        font = "Jetbrains Mono 12";
+
+        foreground = drac-fgd;
+        background-color = drac-bgd;
+        active-background = drac-pnk;
+        urgent-background = drac-red;
+        urgent-foreground = drac-bgd;
+
+        selected-background = drac-pnk;
+        selected-urgent-background = drac-red;
+        selected-active-background = drac-pnk;
+        separatorcolor = drac-pnk;
+        bordercolor = drac-cmt;
+      };
+
+      "#window" = {
+        background-color = drac-bgd;
+        border = 3;
+        border-radius = 6;
+        border-color = drac-cmt;
+        padding = 15;
+      };
+
+      "#mainbox" = {
+        border = 0;
+        padding = 0;
+      };
+
+      "#message" =  {
+        border = mkLiteral "0px";
+        border-color = drac-pnk;
+        padding = mkLiteral "1px";
+      };
+
+      "#textbox" = {
+        text-color = drac-fgd;
+      };
+
+      "#listview" = {
+        fixed-height = 0;
+        border = mkLiteral "0px";
+        border-color = drac-cmt;
+        spacing = mkLiteral "2px";
+        scrollbar = false;
+        padding = mkLiteral "2px 0px 0px";
+      };
+
+      "#element" = {
+        border = 0;
+        padding = mkLiteral "3px";
+      };
+
+      "#element.normal.normal" = {
+        background-color = drac-bgd;
+        text-color = drac-fgd;
+      };
+
+      "#element.normal.urgent" = {
+        background-color = drac-red;
+        text-color = drac-bgd;
+      };
+
+      "#element.normal.active" = {
+        background-color = drac-pnk;
+        text-color = drac-bgd;
+      };
+
+      "#element.selected.normal" = {
+        background-color = drac-pnk;
+        text-color = drac-fgd;
+      };
+
+      "#element.selected.urgent" = {
+        background-color = drac-red;
+        text-color = drac-fgd;
+      };
+
+      "#element.selected.active" = {
+        background-color = drac-pnk;
+        text-color = drac-bgd;
+      };
+
+      "#element.alternate.normal" = {
+        background-color = drac-bgd;
+        text-color = drac-fgd;
+      };
+
+      "#element.alternate.urgent" = {
+        background-color = drac-red;
+        text-color = drac-fgd;
+      };
+
+      "#element.alternate.active" = {
+        background-color = drac-pnk;
+        text-color = drac-fgd;
+      };
+
+      "#scrollbar" = {
+        width = mkLiteral "2px";
+        border = 0;
+        handle-width = mkLiteral "8px";
+        padding = 0;
+      };
+
+      "#sidebar" = {
+        border = mkLiteral "2px dash 0px 0px";
+        border-color = drac-pnk;
+      };
+
+      "#button.selected" = {
+        background-color = drac-pnk;
+        text-color = drac-fgd;
+      };
+
+      "#inputbar" = {
+        spacing = 0;
+        text-color = drac-fgd;
+        padding = mkLiteral "1px";
+      };
+
+      "#case-indicator" = {
+        spacing = 0;
+        text-color = drac-fgd;
+      };
+
+      "#entry" = {
+        spacing = 0;
+        text-color = drac-cya;
+      };
+
+      "#prompt" = {
+        spacing = 0;
+        text-color = drac-grn;
+      };
+
+      "#inputbar" = {
+        children = map mkLiteral [ "prompt" "textbox-prompt-colon" "entry" "case-indicator" ];
+      };
+
+      "#textbox-prompt-colon" = {
+        expand = false;
+        str = "--->";
+        margin = mkLiteral "0px 0.3em 0em 0em";
+        text-color = drac-pur;
+      };
+
+    };
+
   };
 
 }
