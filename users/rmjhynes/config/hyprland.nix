@@ -60,7 +60,7 @@
 
       # Keybinds
       bind = [
-        "$mod, RETURN, exec, foot"
+        "$mod, RETURN, exec, ghostty"
 	"$mod, C, killactive"
 	"$mod, M, exit"
 	"$mod, E, exec, $fileManager"
