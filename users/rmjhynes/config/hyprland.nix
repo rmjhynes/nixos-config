@@ -80,5 +80,27 @@
       ];
     };
   };
+
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
+    location = "center";
+    font = "MesloLGS NF";
+
+    # Path to terminal which will be used to run console applications
+    terminal = "/run/current-system/sw/bin/ghostty";
+
+    extraConfig = {
+      show-icons = true;
+
+      # Format in which to display apps
+      drun-display-format = "{icon} {name}";
+
+      # Search prompt in drun mode
+      display-drun = "Search";
+    };
+
+  };
+
 }
 
