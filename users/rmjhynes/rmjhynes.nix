@@ -45,6 +45,16 @@
           "layer": "top",
           "modules-center": ["clock"],
           "modules-right": ["memory", "network", "battery"],
+          "modules-left": ["hyprland/workspaces"],
+
+          "hyprland/workspaces": {
+            "format": "{name}",
+            "active-only": false,
+            "all-outputs": true,
+            "persistent-workspaces": {
+              "*": 10 // 10 workspaces shown in waybar by default on every monitor
+            }
+          },
 
           "clock": {
             "format": "{:%H:%M:%S %d-%m-%Y}"
