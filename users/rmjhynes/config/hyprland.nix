@@ -310,7 +310,11 @@
         layer = "top";
         modules-center = [ "clock" ];
         modules-right = [ "memory" "network" "battery "];
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "image" "hyprland/workspaces" ];
+
+        "image" = {
+          path = "/home/rmjhynes/Downloads/nixos-logo.png";
+        };
 
         "hyprland/workspaces" = {
           format = "{name}";
