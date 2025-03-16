@@ -258,7 +258,7 @@
 
       "#textbox-prompt-colon" = {
         expand = false;
-        str = "--->";
+        str = "===>";
         margin = mkLiteral "0px 0.3em 0em 0em";
         text-color = drac-pur;
       };
