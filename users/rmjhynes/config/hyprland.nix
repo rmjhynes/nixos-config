@@ -87,7 +87,8 @@
     font = "MesloLGS NF";
 
     # Path to terminal which will be used to run console applications
-    terminal = "/run/current-system/sw/bin/ghostty";
+    #terminal = "/run/current-system/sw/bin/ghostty";
+    terminal = "${pkgs.ghostty}/bin/ghostty";
 
     extraConfig = {
       show-icons = true;
