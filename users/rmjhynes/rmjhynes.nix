@@ -42,29 +42,29 @@
     ".config/waybar/config" = {
       text = ''
         {
-	  "layer": "top",
-	  "modules-center": ["clock"],
-	  "modules-right": ["memory", "network", "battery"],
+          "layer": "top",
+          "modules-center": ["clock"],
+          "modules-right": ["memory", "network", "battery"],
 
-	  "clock": {
-	    "format": "{:%H:%M:%S %d-%m-%Y}"
-	  },
+          "clock": {
+            "format": "{:%H:%M:%S %d-%m-%Y}"
+          },
 
-	  "memory": {
-	    "format": "{used} / {total} MB",
-	    "tooltop-format": "Memory: {used} / {total} MB"
-	  },
+          "memory": {
+            "format": "{used} / {total} MB",
+            "tooltop-format": "Memory: {used} / {total} MB"
+          },
 
-	  "network": {
-	    "format-up": "{interface} - {ipaddr}",
-	    "format-down": "No connection"
-	  },
+          "network": {
+            "format-up": "{interface} - {ipaddr}",
+            "format-down": "No connection"
+          },
 
-	  "battery": {
-	    "format": "{percentage}% {icon}",
-	    "tooltip-format": "Battery: {percentage}%"
-	  }
-	}
+          "battery": {
+            "format": "{percentage}% {icon}",
+            "tooltip-format": "Battery: {percentage}%"
+          }
+        }
       '';
     };
   };
