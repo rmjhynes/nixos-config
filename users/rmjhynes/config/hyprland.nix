@@ -128,15 +128,15 @@
         selected-normal-background-color = drac-pnk;
         selected-urgent-background-color = drac-red;
         selected-active-background-color = drac-pnk;
-        separatorcolor = drac-pnk;
-        bordercolor = drac-cmt;
+        separator-color = drac-pnk;
+        border-color = drac-cmt;
       };
 
       "#window" = {
-        background-color = drac-bgd;
+        background-color = mkLiteral "@background-color";
         border = 3;
         border-radius = 6;
-        border-color = drac-cmt;
+        border-color = mkLiteral "@border-color";
         padding = 15;
       };
 
@@ -147,18 +147,18 @@
 
       "#message" =  {
         border = mkLiteral "0px";
-        border-color = drac-pnk;
+        border-color = mkLiteral "@separator-color";
         padding = mkLiteral "1px";
       };
 
       "#textbox" = {
-        text-color = drac-fgd;
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#listview" = {
         fixed-height = 0;
         border = mkLiteral "0px";
-        border-color = drac-cmt;
+        border-color = mkLiteral "@border-color";
         spacing = mkLiteral "2px";
         scrollbar = false;
         padding = mkLiteral "2px 0px 0px";
@@ -170,48 +170,48 @@
       };
 
       "#element.normal.normal" = {
-        background-color = drac-bgd;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#element.normal.urgent" = {
-        background-color = drac-red;
-        text-color = drac-bgd;
+        background-color = mkLiteral "@urgent-background-color";
+        text-color = mkLiteral "@urgent-foreground-color";
       };
 
       "#element.normal.active" = {
-        background-color = drac-pnk;
-        text-color = drac-bgd;
+        background-color = mkLiteral "@active-background-color";
+        text-color = mkLiteral "@background-color";
       };
 
       "#element.selected.normal" = {
-        background-color = drac-pnk;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@selected-normal-background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#element.selected.urgent" = {
-        background-color = drac-red;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@selected-urgent-background-color";
+        text-color = "@foreground-color";
       };
 
       "#element.selected.active" = {
-        background-color = drac-pnk;
-        text-color = drac-bgd;
+        background-color = mkLiteral "@selected-active-background-color";
+        text-color = mkLiteral "@background-color";
       };
 
       "#element.alternate.normal" = {
-        background-color = drac-bgd;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#element.alternate.urgent" = {
-        background-color = drac-red;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@urgent-background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#element.alternate.active" = {
-        background-color = drac-pnk;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@active-background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#scrollbar" = {
@@ -223,23 +223,23 @@
 
       "#sidebar" = {
         border = mkLiteral "2px dash 0px 0px";
-        border-color = drac-pnk;
+        border-color = mkLiteral "@separator-color";
       };
 
       "#button.selected" = {
-        background-color = drac-pnk;
-        text-color = drac-fgd;
+        background-color = mkLiteral "@selected-normal-background-color";
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#inputbar" = {
         spacing = 0;
-        text-color = drac-fgd;
+        text-color = mkLiteral "@foreground-color";
         padding = mkLiteral "1px";
       };
 
       "#case-indicator" = {
         spacing = 0;
-        text-color = drac-fgd;
+        text-color = mkLiteral "@foreground-color";
       };
 
       "#entry" = {
