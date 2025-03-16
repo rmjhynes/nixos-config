@@ -49,7 +49,6 @@
 
           "hyprland/workspaces": {
             "format": "{name}",
-            "active-only": false,
             "all-outputs": true,
             "persistent-workspaces": {
               "*": 10 // 10 workspaces shown in waybar by default on every monitor
