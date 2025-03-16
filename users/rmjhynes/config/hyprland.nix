@@ -303,5 +303,45 @@
 
   };
 
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        modules-center = [ "clock" ];
+        modules-right = [ "memory" "network" "battery "];
+        modules-left = [ "hyprland/workspaces" ];
+
+        "hyprland/workspaces" = {
+          format = "{name}";
+          all-outputs = true;
+          persistent-workspaces = {
+            # 10 workspaces shown in waybar by default on every monitor
+            "*" = 10;
+          };
+        };
+
+        clock = {
+          format = "{:%H:%M:%S %d-%m-%Y}";
+        };
+
+        memory = {
+          format = "{used} / {total} MB";
+          tooltop-format = "Memory: {used} / {total} MB";
+        };
+
+        network = {
+          format-up = "{interface} - {ipaddr}";
+          format-down = "No connection";
+        };
+
+        battery = {
+          format = "{percentage}% {icon}";
+          tooltip-format = "Battery: {percentage}%";
+        };
+      };
+    };
+  };
+
 }
 
