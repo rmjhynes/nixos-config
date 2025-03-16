@@ -81,6 +81,7 @@
     };
   };
 
+  # rofi app launcher config and Dracula theme
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
@@ -119,15 +120,15 @@
       "*" = {
         font = "Jetbrains Mono 12";
 
-        foreground = drac-fgd;
+        foreground-color = drac-fgd;
         background-color = drac-bgd;
-        active-background = drac-pnk;
-        urgent-background = drac-red;
-        urgent-foreground = drac-bgd;
+        active-background-color = drac-pnk;
+        urgent-background-color = drac-red;
+        urgent-foreground-color = drac-bgd;
 
-        selected-background = drac-pnk;
-        selected-urgent-background = drac-red;
-        selected-active-background = drac-pnk;
+        selected-normal-background-color = drac-pnk;
+        selected-urgent-background-color = drac-red;
+        selected-active-background-color = drac-pnk;
         separatorcolor = drac-pnk;
         bordercolor = drac-cmt;
       };
@@ -261,6 +262,16 @@
         str = "--->";
         margin = mkLiteral "0px 0.3em 0em 0em";
         text-color = drac-pur;
+      };
+
+      "#element-text" = {
+        background-color = mkLiteral "inherit";
+        text-color = mkLiteral "inherit";
+      };
+
+      "#element-icon" = {
+        background-color = mkLiteral "inherit";
+        text-color = mkLiteral "inherit";
       };
 
     };
