@@ -100,8 +100,8 @@
         modules = [
           {
             environment.systemPackages = [
-              ghostty.packages.x86_64-linux.default
-              zen-browser.packages.x86_64-linux.twilight
+              ghostty.packages.${system}.default
+              zen-browser.packages.${system}.twilight
             ];
           }
           # Homelab sepcific config
