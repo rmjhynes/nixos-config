@@ -5,5 +5,6 @@
     git
     vim
     tree
+    nixfmt-rfc-style
   ];
 }
