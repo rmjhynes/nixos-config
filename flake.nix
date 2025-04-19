@@ -21,9 +21,13 @@
       flake = true;
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, dotfiles, ghostty, ... }:
+  outputs = { self, nixpkgs, home-manager, dotfiles, ghostty, zen-browser, ... }:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -97,6 +101,7 @@
           {
             environment.systemPackages = [
               ghostty.packages.x86_64-linux.default
+              zen-browser.packages.x86_64-linux.twilight
             ];
           }
           # Homelab sepcific config
