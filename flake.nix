@@ -20,6 +20,7 @@
       url = "github:ghostty-org/ghostty";
       flake = true;
     };
+
   };
 
   outputs = { self, nixpkgs, home-manager, dotfiles, ghostty, ... }:
@@ -54,63 +55,55 @@
       # Config for NixOS on a VM on M3 macbook pro
       vm = lib.nixosSystem {
         inherit system;
-	modules = [
-	  {
-	    environment.systemPackages = [
-	      ghostty.packages.aarch64-linux.default
-	    ];
-	  }
-	  # VM sepcific config
-	  ./hosts/vm/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  (mkHomeConfiguration {
-	    dotfiles = dotfiles;
-	  })
-	];
+        modules = [
+          {
+            environment.systemPackages = [
+              ghostty.packages.aarch64-linux.default
+            ];
+          }
+          # VM sepcific config
+          ./hosts/vm/configuration.nix
+          home-manager.nixosModules.home-manager
+          (mkHomeConfiguration { dotfiles = dotfiles; })
+        ];
       };
 
       # Config for NixOS on ancient Dell laptop
       dell-laptop = lib.nixosSystem {
-	inherit system;
-	modules = [
+        inherit system;
+        modules = [
           # Laptop sepcific config
-	  ./hosts/dell-laptop/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  (mkHomeConfiguration {
-	    dotfiles = dotfiles;
-	  })
-	];
+          ./hosts/dell-laptop/configuration.nix
+          home-manager.nixosModules.home-manager
+          (mkHomeConfiguration { dotfiles = dotfiles; })
+        ];
       };
 
       # Config for NixOS on EC2
       ec2 = lib.nixosSystem {
-	inherit system;
-	modules = [
+        inherit system;
+        modules = [
           # EC2 sepcific config
-	  ./hosts/ec2/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  (mkHomeConfiguration {
-	    dotfiles = dotfiles;
-	  })
-	];
+          ./hosts/ec2/configuration.nix
+          home-manager.nixosModules.home-manager
+          (mkHomeConfiguration { dotfiles = dotfiles; })
+        ];
       };
 
       # Config for NixOS on Beelink for Homelab
       beelink-s12 = lib.nixosSystem {
         inherit system;
-	modules = [
-	  {
-	    environment.systemPackages = [
-	      ghostty.packages.x86_64-linux.default
-	    ];
-	  }
+        modules = [
+          {
+            environment.systemPackages = [
+              ghostty.packages.x86_64-linux.default
+            ];
+          }
           # Homelab sepcific config
-	  ./hosts/beelink-s12/configuration.nix
-	  home-manager.nixosModules.home-manager
-	  (mkHomeConfiguration {
-	    dotfiles = dotfiles;
-	  })
-	];
+          ./hosts/beelink-s12/configuration.nix
+          home-manager.nixosModules.home-manager
+          (mkHomeConfiguration { dotfiles = dotfiles; })
+        ];
       };
 
     };
