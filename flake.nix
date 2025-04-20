@@ -105,11 +105,13 @@
         }
       );
 
-      # devshell to install and run pre-commit hooks
       devShells = forAllSystems (
         { system, pkgs }:
         {
-          default = pkgs.mkShell {
+          # devshell named "hooks" to install and run pre-commit hooks
+          # enter this devshell with "nix develop .#hooks --command zsh"
+          hooks = pkgs.mkShell {
+            name = "pre-commit-hooks-shell";
             inherit (self.checks.${system}.pre-commit-check) shellHook;
             buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           };
