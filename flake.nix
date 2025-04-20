@@ -98,8 +98,8 @@
             src = ./.;
             # Define which hooks to enable
             hooks = {
-              # Only using nix formatting
-              nixfmt-rfc-style.enable = true;
+              # Format as per treefmt.toml file
+              treefmt.enable = true;
             };
           };
         }
