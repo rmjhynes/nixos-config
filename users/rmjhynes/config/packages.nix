@@ -21,6 +21,7 @@
     jq
     yq-go
     lazygit
+    zoxide
 
     # Languages
     python314
