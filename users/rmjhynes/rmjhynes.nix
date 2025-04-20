@@ -1,4 +1,9 @@
-{ config, pkgs, dotfiles, ... }:
+{
+  config,
+  pkgs,
+  dotfiles,
+  ...
+}:
 
 {
   imports = [
@@ -45,18 +50,17 @@
   programs.git = {
     enable = true;
     userName = "Ryan Hynes";
-    userEmail= "131348960+rmjhynes@users.noreply.github.com";
+    userEmail = "131348960+rmjhynes@users.noreply.github.com";
     extraConfig = {
       init.defaultbranch = "main";
     };
     aliases = {
-     st = "status";
-     d = "diff";
-     c = "commit";
-     rb = "rebase";
-     sw = "switch";
+      st = "status";
+      d = "diff";
+      c = "commit";
+      rb = "rebase";
+      sw = "switch";
     };
   };
 
 }
-

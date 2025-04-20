@@ -5,12 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      # Import the configuration shared between all hosts
-      ../common/configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    # Import the configuration shared between all hosts
+    ../common/configuration.nix
+  ];
 
   # Using GRUB bootloader over system-d as it looks nicer
   boot.loader = {

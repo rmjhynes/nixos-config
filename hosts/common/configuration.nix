@@ -5,14 +5,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      # Import packages from packages file
-      ./packages.nix
-    ];
+  imports = [
+    # Import packages from packages file
+    ./packages.nix
+  ];
 
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -73,7 +75,6 @@
     KITTY_ENABLE_WAYLAND = "1";
   };
 
-
   # Configure console keymap
   console.keyMap = "uk";
 
@@ -99,7 +100,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
   # Enable zsh so it can be set as default for users
   programs.zsh.enable = true;
 
@@ -114,9 +114,6 @@
       "networkmanager"
       "wheel"
       "docker" # Add user to Docker group otherwise you get permission denied error when connecting to Docker daemon
-    ];
-
-    packages = with pkgs; [
     ];
 
     shell = pkgs.zsh;
