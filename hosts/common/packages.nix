@@ -6,5 +6,6 @@
     vim
     tree
     nixfmt-rfc-style
+    pre-commit
   ];
 }
