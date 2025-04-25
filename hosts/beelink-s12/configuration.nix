@@ -11,9 +11,19 @@
     ../common/configuration.nix
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Using GRUB bootloader over system-d as it looks nicer
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true; # Allow managing EFI vars
+      efiSysMountPoint = "/boot"; # Where EFI system partition is mounted
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev"; # Required for UEFI install
+      configurationLimit = 5;
+    };
+  };
 
   environment.variables = {
     KUBECONFIG = "/etc/rancher/k3s/k3s.yaml"; # Tells k8s tools which config file to use when interacting with the cluster
