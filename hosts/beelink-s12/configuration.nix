@@ -67,7 +67,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Setup /etc/resolv.conf file to configure DNS resolution
+  # Setup /etc/resolv.conf file to configure DNS resolution to point at the
+  # kube-dns service in k3s
   environment.etc."resolv.conf".text = ''
     nameserver 10.43.0.10
     options edns0
