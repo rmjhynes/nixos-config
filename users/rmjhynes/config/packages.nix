@@ -7,7 +7,7 @@
 
     # CLI
     git
-    awscli2
+    #awscli2
     vim
     neovim
     tmux
@@ -26,7 +26,7 @@
     # Languages
     python314
     go
-    terraform
+    #terraform
 
     # Infra
     k3s
